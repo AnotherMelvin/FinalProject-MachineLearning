@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Sleep Disorder Prediction</title>
+{% endblock %}
+
+{% block body %}
+<div class="container main">
+    <h6 class="text-center">You Have:</h6>
+    <h1 class="text-center">{{ predict }}</h1>
+    <h6 class="text-center">Sleep Disorder</h6>
+    <p class="text-center mb-5">Accuracy: {{ acc }}%</p>
+    <div class="row mx-5">
+        <a class="btn btn-primary" href="/" role="button">Return</a>
+    </div>
+</div>
+{% endblock %}

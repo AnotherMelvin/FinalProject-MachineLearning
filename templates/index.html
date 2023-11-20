@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Sleep Disorder Prediction</title>
+{% endblock %}
+
+{% block body %}
+<div class="container main p-3">
+    <h1 class="text-center mb-5">Sleep Disorder Prediction</h1>
+
+    <form action="/result" method="POST">
+        <div class="mb-3">
+            <div class="row align-items-center ">
+                <div class="col-6">
+                    <label for="genderInput" class="form-label">Gender</label>
+                    <select class="form-select" id="genderInput" name="gender" aria-label="Default select example">
+                        <option selected value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label for="ageInput" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="ageInput" name="age" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="row align-items-center ">
+                <div class="col-6">
+                    <label for="weightInput" class="form-label">Weight</label>
+                    <input type="number" class="form-control" id="weightInput" name="weight" placeholder="(kg)" required>
+                </div>
+                <div class="col-6">
+                    <label for="heightInput" class="form-label">Height</label>
+                    <input type="number" class="form-control" id="heightInput" name="height" placeholder="(cm)" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="occupationInput" class="form-label">Occupation</label>
+            <select class="form-select" id="genderInput" name="occup" aria-label="Default select example">
+                <option selected value="Student">Student</option>
+                <option value="Doctor">Doctor</option>
+                <option value="Nurse">Nurse</option>
+                <option value="Sales Representative">Sales Representative</option>
+                <option value="Salesperson">Salesperson</option>
+                <option value="Teacher">Teacher</option>
+                <option value="Software Engineer">Software Engineer</option>
+                <option value="Engineer">Engineer</option>
+                <option value="Scientist">Scientist</option>
+                <option value="Accountant">Accountant</option>
+                <option value="Lawyer">Lawyer</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <div class="row align-items-center ">
+                <div class="col-6">
+                    <label for="durationInput" class="form-label">Sleep Duration</label>
+                    <input type="number" class="form-control" id="durationInput" name="sleep" placeholder="(hours)" step=".1" required>
+                </div>
+                <div class="col-6">
+                    <label for="physicalInput" class="form-label">Physical Activity Level</label>
+                    <input type="number" class="form-control" id="physicalInput" name="physical" placeholder="(minutes) per day" step=".1" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="sleepInput" class="form-label">Quality of Sleep</label>
+            <input type="range" class="form-range" min="0" max="10" id="sleepInput" name="quality">
+            <div class="row align-items-center ">
+                <div class="col-4 text-start">
+                    <p>0</p>
+                </div>
+                <div class="col-4 text-center">
+                    <p>5</p>
+                </div>
+                <div class="col-4 text-end">
+                    <p>10</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="stressInput" class="form-label">Stress Level</label>
+            <input type="range" class="form-range" min="0" max="10" id="stressInput" name="stress">
+            <div class="row align-items-center ">
+                <div class="col-4 text-start">
+                    <p>0</p>
+                </div>
+                <div class="col-4 text-center">
+                    <p>5</p>
+                </div>
+                <div class="col-4 text-end">
+                    <p>10</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="bloodInput" class="form-label">Blood Pressure*</label>
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <input type="number" class="form-control" id="bloodInput" name="sys" placeholder="(systolic)" required>
+                </div>
+                <div class="col-6">
+                    <input type="number" class="form-control" id="bloodInput" name="dias" placeholder="(diastolic)" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="row align-items-center ">
+                <div class="col-6">
+                    <label for="heartInput" class="form-label">Heart Rate*</label>
+                    <input type="number" class="form-control" id="heartInput" name="heart" placeholder="(bpm)" required>
+                </div>
+                <div class="col-6">
+                    <label for="stepsInput" class="form-label">Daily Steps*</label>
+                    <input type="number" class="form-control" id="stepsInput" name="steps" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-5">
+            <p>*Insert 0 if don't know</p>
+        </div>
+
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
